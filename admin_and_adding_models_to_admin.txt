@@ -1,0 +1,14 @@
+python manage.py createsuperuser
+
+in every custom app that you have in your project that you want the admin to be able to see in the admin interface
+for a model you need to add this into the admin.py file
+
+go to customApp
+find admin.py and add
+	
+	from django.contrib import admin
+
+	from .models import customModel
+
+	admin.site.register(customModel)
+	
