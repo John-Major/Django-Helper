@@ -10,3 +10,5 @@ import os
 find TEMPLATES
 
 add in DIRS: [os.path.join(BASE_DIR, 'templates')],
+
+any render object from app views can now have filename.html directly from templates folder
