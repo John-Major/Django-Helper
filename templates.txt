@@ -1,0 +1,12 @@
+Setting up templates
+
+add templates folder to home directory of project
+
+go to startproject folder that was created on initial project start
+go to settings.py
+
+import os
+
+find TEMPLATES
+
+add in DIRS: [os.path.join(BASE_DIR, 'templates')],
