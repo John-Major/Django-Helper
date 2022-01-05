@@ -1,0 +1,28 @@
+Passing variables to html files from views
+
+go to views.py on custom app
+
+from django.shortcuts import render
+
+on any function return a render object. Render object takes in request, html file, and context data.
+context data has to be in a map format
+
+inside of the html put {% block content %} {{myVariableName}} {% endblock %}
+myVariable name will be key name from context map
+
+myappfolder => views.py
+
+def index(request):
+    context = {
+        "value": 10
+    }
+    return render(request, "index.html", context)
+
+templatesfolder => index.html
+
+<body>
+    <h1>Hello World!</h1>
+    {% block content%}
+        Value: {{value}}
+    {% endblock %}
+</body>
