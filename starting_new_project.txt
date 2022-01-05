@@ -1,0 +1,31 @@
+pip install django
+
+python -m django --version
+
+django-admin startproject myProjectName
+
+python manage.py runserver
+
+python manage.py startapp coolAppName
+
+in coolAppName add a urls.py file
+in urls.py file add
+	from django.urls import path
+
+	from . import views
+
+	urlpatterns = [
+    		path('', views.index, name='index'),
+	]
+where index is the function name that will be in views.py located in coolAppName
+
+in myProjectName find urls.py
+import include from django.urls
+find urlpatterns
+add 
+	path('coolAppName/', include('coolAppName.urls')
+
+in myProjectName find settings.py
+find INSTALLEDAPPS
+add 
+	'coolAppName.apps.CoolAppName.Config'
