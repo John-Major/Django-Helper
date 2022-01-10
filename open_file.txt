@@ -1,0 +1,4 @@
+Go to any python file that is inside of a custom app  
+
+BASE_DIR = Path(__file__).resolve().parent
+my_custom_string= open(os.path.join(BASE_DIR, "some_txt_file_to_load.txt"), 'r')
