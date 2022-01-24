@@ -1,0 +1,21 @@
+#JINJA
+
+#content block
+
+{% block content %}
+
+{% endblock %}
+
+#for loop
+
+{% for something in stuff %}
+
+{% endfor %}
+
+# if else
+
+{% if true %}
+
+{% else %}
+
+{% endif %}
