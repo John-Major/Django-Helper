@@ -1,0 +1,31 @@
+
+
+# settings.py
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' 
+-------------------------------------------------------------
+#adding WHITENOISE
+pip install whitenoise
+
+add 'whitenoise.runserver_nostatic' ABOVE DJANGO.CONTRIB.STATICFILES in INSTALLED APPS
+add 'whitenoise.middleware.WhiteNoiseMiddleware', RIGHT BELLOW SESSION MIDDLEWARE in MIDDLEWARE
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #new
+
+#python manage.py collectstatic
+
+--------------------------------------------------------------------
+#notes
+STATIC_URL is the URL location of static files located in STATIC_ROOT
+STATICFILES_DIRS tells Django where to look for static files in a Django project, such as a top-level static folder
+STATIC_ROOT is the folder location of static files when collectstatic is run
+STATICFILES_STORAGE is the file storage engine used when collecting static files with the collectstatic command.
