@@ -1,0 +1,31 @@
+#ORM
+
+queryset = ModelName.objects.getAll()
+queryset = ModelName.objects.get(attribute = "value")
+queryset = ModelName.objects.filter(attribute = "searchMe")
+			   .filter(atttribute__startswith = 'value')
+			   .filter(atttribute__contains = 'value')
+			   .filter(atttribute__icontains = 'value') #contains ignore casing
+			   .filter(atttribute__gt = 'value') #greater than
+			   .filter(atttribute__gte = 'value') #greater than or equal
+			   .filter(atttribute__lt = 'value') #less than
+			   .filter(atttribute__lte = 'value') #less than or equal
+
+queryset = Modelname.objects.exclude(attribute = 'value') #everything but vlaue
+
+queryset = Modelname.objects.filter(attribute = 'value').order_by('-value') #orders the data by value
+
+queryset.title = 'newTitle'
+queryset.save() #saves the model
+
+queryset = ModelName.objects.last()
+queryset.delete
+
+#query models children, all children of specific table
+queryset = ModelName.objects.first()
+queryset.childmodel_set.all() #give set of all children from model
+
+#query many to  many
+item = ModelName.objects.first()
+item = relationshipname.all()
+
